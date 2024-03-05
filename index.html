@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="coracao.ico" type="image/x-icon">
+      <!-- CDN do Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <title>Negociação do Produto</title>
+</head>
+<body class="w-100">
+    <div class="z-1 position-absolute w-100 h-100 d-flex justify-content-center align-items-center">
+        <div id="page1" class="page mx-3 w-100 ">
+            <h1 class="mb-5">Vai querer esse produto?</h1>
+            <div class="d-flex justify-content-center mt-5">
+                <button class="mx-5" id="btnSim1">Sim</button>
+                    <button class="mx-5" id="btnNao1">Não</button>
+            </div>
+        </div>
+        <div id="page2" class="page" style="display: none;">
+            <h1 class="mb-5">Será?</h1>
+            <div class="d-flex justify-content-center mt-5">
+                <button class="mx-5" id="btnSim2">Sim</button>
+                <button class="mx-5" id="btnNao2">Não</button>
+            </div>
+        </div>
+        <div id="page3" class="page" style="display: none;">
+            <h1 class="mb-5">Aceita se casar comigo?</h1>
+            <div class="d-flex justify-content-center mt-5">
+                <button class="mx-5" id="btnSim3">
+                    <svg class="empty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
+                        <path fill="none" d="M0 0H24V24H0z"></path>
+                        <path
+                            d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2zm-3.566 15.604c.881-.556 1.676-1.109 2.42-1.701C18.335 14.533 20 11.943 20 9c0-2.36-1.537-4-3.5-4-1.076 0-2.24.57-3.086 1.414L12 7.828l-1.414-1.414C9.74 5.57 8.576 5 7.5 5 5.56 5 4 6.656 4 9c0 2.944 1.666 5.533 4.645 7.903.745.592 1.54 1.145 2.421 1.7.299.189.595.37.934.572.339-.202.635-.383.934-.571z">
+                        </path>
+                    </svg>
+                    <svg class="filled" height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0H24V24H0z" fill="none"></path>
+                        <path
+                            d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z">
+                        </path>
+                    </svg>
+                    Sim
+                </button>
+                <button class="mx-5" id="btnNao3">Não</button>
+            </div>
+        </div>
+        <div id="page4" class="page mx-5 px-5" style="display: none;">
+            <h1>Parabéns você acabou de assinar o contrato com o vendedor, esse produto é seu ooo!!!</h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<style>
+    h1{
+        text-align: center;
+        font-size: 2em !important;
+        color: #da0000 !important;
+        text-shadow: 5px 5px 5px  rgb(45, 0, 0);
+    }
+    #btnSim3,
+    #btnSim2,
+    #btnSim1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 35px;
+        box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        background-color: #e8e8e8;
+        border-color: #ffe2e2;
+        border-style: solid;
+        border-width: 9px;
+        border-radius: 35px;
+        font-size: 25px;
+        font-weight: 900;
+        color: rgb(45, 0, 0);
+        font-family: Loves;
+        transition: transform 400ms cubic-bezier(.68, -0.55, .27, 2.5);
+        border-color: 400ms ease-in-out;
+        background-color: 400ms ease-in-out;
+        word-spacing: -2px;
+    }
+
+
+    #btnNao3,
+    #btnNao2,
+    #btnNao1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 35px;
+        box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        background-color: #e8e8e8;
+        border-color: #ffe2e2;
+        border-style: solid;
+        border-width: 9px;
+        border-radius: 35px;
+        font-size: 25px;
+        font-weight: 900;
+        color: rgb(45, 0, 0);
+        font-family: Loves;
+        transition: transform 400ms cubic-bezier(.68, -0.55, .27, 2.5);
+        border-color: 400ms ease-in-out;
+        background-color: 400ms ease-in-out;
+        word-spacing: -2px;
+    }
+
+    @keyframes movingBorders {
+        0% {
+            border-color: #fce4e4;
+        }
+
+        50% {
+            border-color: #ffd8d8;
+        }
+
+        90% {
+            border-color: #fce4e4;
+        }
+    }
+
+    #btnSim3:hover,
+    #btnSim2:hover,
+    #btnSim1:hover {
+        transform: scale(105%);
+        animation: movingBorders 3s infinite;
+        background-color: #970000;
+        color: #ffb6b6;
+    }
+
+    #btnNao3:hover,
+    #btnNao2:hover,
+    #btnNao1:hover {
+        transform: scale(105%);
+        animation: movingBorders 3s infinite;
+        background-color: #380000;
+        color: #ffb6b6;
+    }
+
+    #btnSim3 svg {
+        margin-right: 11px;
+        fill: rgb(255, 110, 110);
+        transition: opacity 100ms ease-in-out;      
+    }
+
+    .filled {
+        position: absolute;
+        opacity: 0;
+        top: 20px;
+        left: 22px;
+    }
+
+    @keyframes beatingHeart {
+        0% {
+            transform: scale(1);
+        }
+
+        15% {
+            transform: scale(1.15);
+        }
+
+        30% {
+            transform: scale(1);
+        }
+
+        45% {
+            transform: scale(1.15);
+        }
+
+        60% {
+            transform: scale(1);
+        }
+    }
+
+    #btnSim3:hover .empty {
+        opacity: 0;
+    }
+
+    #btnSim3:hover .filled {
+        opacity: 1;
+        animation: beatingHeart 1.2s infinite;
+    }
+
+    @font-face {
+        font-family: Loves;
+        src: url(Lover\ Loves.ttf);
+    }
+
+    body {
+        background-color: #ffb6b6;
+        color: #520000;
+        font-size: 2.5em;
+        font-family: Loves;
+        overflow: hidden;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .caixa_botoes {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+
+    }
+
+    .page {
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .bubble {
+        position: absolute;
+        width: 10vw;
+        height: 10vw;
+        min-width: 70px;
+        min-height: 70px;
+        max-width: 150px;
+        max-height: 150px;
+        color: #e03a3a;
+        border-radius: 50%;
+    }
+
+
+    .bubble-dummy {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: inherit;
+        border: .2em solid currentColor;
+        animation: bubbleUp 1200ms ease-out forwards;
+    }
+
+    @keyframes bubbleUp {
+        from {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        100% {
+            opacity: 0;
+            transform: scale(1.1);
+        }
+    }
+
+
+    .heart {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+    }
+
+    .heart path {
+        fill: #e27373;
+        stroke: none;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        /* Ajusta o tamanho da fonte dos botões */
+        #btnSim3,
+        #btnSim2,
+        #btnSim1 {
+            font-size: 1.25rem;
+            /* 20px / 16px = 1.25rem */
+        }
+
+        /* Ajusta a largura dos botões */
+        #btnSim3,
+        #btnSim2,
+        #btnSim1,
+        #btnNao3,
+        #btnNao2,
+        #btnNao1 {
+            width: 100%;
+            max-width: none;
+        }
+
+        /* Centraliza o texto dos botões */
+        #btnSim3 span,
+        #btnSim2 span,
+        #btnSim1 span,
+        #btnNao3 span,
+        #btnNao2 span,
+        #btnNao1 span {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Ajusta o espaçamento entre os botões */
+        .caixa_botoes {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            /* 10px / 16px = 0.625rem */
+        }
+
+    }
+</style>
+
+<script>
+    document.getElementById("btnSim1").addEventListener("click", function () {
+        document.getElementById("page1").style.display = "none";
+        document.getElementById("page2").style.display = "block";
+    });
+
+    document.getElementById("btnNao1").addEventListener("click", function () {
+        location.reload();
+    });
+
+    document.getElementById("btnSim2").addEventListener("click", function () {
+        document.getElementById("page2").style.display = "none";
+        document.getElementById("page3").style.display = "block";
+    });
+
+    document.getElementById("btnNao2").addEventListener("click", function () {
+        document.getElementById("page2").style.display = "none";
+        document.getElementById("page1").style.display = "block";
+    });
+
+    document.getElementById("btnSim3").addEventListener("click", function () {
+        document.getElementById("page3").style.display = "none";
+        document.getElementById("page4").style.display = "block";
+        const audio = new Audio("love_leve.mp3")
+        audio.play()
+    });
+
+    // Obtém uma referência para o elemento de botão com o ID "btnNao3"
+    const button = document.getElementById("btnNao3");
+    // Adiciona um evento de passagem do mouse ao botão
+    button.addEventListener("mouseover", function () {
+        // Gera uma posição aleatória para o botão dentro da janela do navegador
+        const posY = Math.random() * (window.innerHeight - button.offsetHeight);
+        const posX = Math.random() * (window.innerWidth - button.offsetWidth);
+
+        // Define a posição do botão como "absoluta", movendo assim o botão para essa nova posição
+        button.style.position = "absolute";
+        button.style.top = `${posY}px`;
+        button.style.left = `${posX}px`;
+    });
+
+
+    function getRandomColor() {
+        var colors = ["#e03a3a", "#e03a3a", "#e03a3a", "#e03a3a", "#e03a3a", "#e03a3a"],
+            idx = Math.floor(colors.length * Math.random());
+        return (colors[idx]);
+    }
+
+    function animateIt(el, dur, delay) {
+        var animateEl = el.animate([
+            {
+                opacity: 0,
+                transform: "translate(-50%, -50%) scale(0)"
+            },
+
+            {
+                opacity: 1,
+                transform: "translate(-50%, -50%) scale(1)"
+            },
+            {
+                opacity: 0,
+                transform: "translate(-50%, -50%) scale(1.1)"
+            }
+
+        ],
+            {
+                duration: dur,
+                easing: "ease-out",
+                fill: "forwards",
+                delay: delay || 0
+            });
+
+        return animateEl;
+    }
+
+
+
+    function createBubble() {
+        var ns = "http://www.w3.org/2000/svg",
+            bubble = document.createElement("div"),
+            bubbleDummy = document.createElement("div"),
+            heart = document.createElementNS(ns, "svg"),
+            heartPath = document.createElementNS(ns, "path");
+
+        heart.setAttribute("viewBox", "0 0 600 500")
+        heartPath.setAttribute("d", "M300,150 C500,10 600,300 300,400 C0,300 100,10 300,150");
+        bubble.classList.add("bubble");
+        bubble.style.color = getRandomColor();
+        bubbleDummy.classList.add("bubble-dummy");
+        heart.classList.add("heart");
+
+        heart.appendChild(heartPath);
+        bubble.appendChild(bubbleDummy);
+        bubble.appendChild(heart);
+
+        document.body.appendChild(bubble);
+        return {
+            setPosition: function (x, y) {
+                bubble.style.left = x + "px";
+
+                bubble.style.top = y + "px";
+            },
+            _animate: function () {
+                var animateBubble = animateIt(bubbleDummy, 1200),
+                    animateHeart = animateIt(heart, 2000);
+
+                console.log(animateBubble)
+
+                return {
+                    bubbleDur: 1200,
+                    heartDur: 2000
+                }
+            },
+            remove: function (el) {
+                bubble.remove();
+            }
+        }
+    }
+
+
+    document.body.addEventListener("touchstart", handleDown, false);
+
+    function handleDown(e) {
+        var _x = e.pageX,
+            _y = e.pageY;
+
+        var bubble = createBubble();
+
+        bubble.setPosition(_x, _y);
+        var animation = bubble._animate(),
+            totalDelay = animation.bubbleDur + animation.heartDur;
+        if (e.type) {
+            createSound(20, 5000, 1, "sawtooth", 1);
+        }
+        setTimeout(() => {
+            bubble.remove();
+            console.log("removed");
+        }, totalDelay);
+
+        console.log(animation);
+    }
+
+    var w = document.body.clientWidth,
+        h = document.body.clientHeight;
+
+    function bubbleUp() {
+        var de = {
+            pageX: Math.random() * w,
+            pageY: Math.random() * h
+        }
+
+        handleDown(de);
+
+        bblUp = setTimeout(bubbleUp, 200);
+
+    }
+    bubbleUp();
+
+    window.addEventListener("resize", function () {
+        w = document.body.clientWidth,
+            h = document.body.clientHeight;
+    }, false);
+
+</script>
