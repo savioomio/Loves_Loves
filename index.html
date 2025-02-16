@@ -1,486 +1,311 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="coracao.ico" type="image/x-icon">
-      <!-- CDN do Bootstrap 5 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./coracao.ico" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./style.css" />
     <title>Negociação do Produto</title>
-</head>
-<body class="w-100">
-    <div class="z-1 position-absolute w-100 h-100 d-flex justify-content-center align-items-center">
-        <div id="page1" class="page mx-3 w-100 ">
-            <h1 class="mb-5">Vai querer esse produto?</h1>
-            <div class="d-flex justify-content-center mt-5">
-                <button class="mx-5" id="btnSim1">Sim</button>
-                    <button class="mx-5" id="btnNao1">Não</button>
+  </head>
+  <body class="w-full font-loves">
+    <div class="w-full h-full flex justify-center items-center">
+      <!-- TELAS INICIAIS -->
+      <div id="page1" class="page mx-3 w-full">
+        <h1 class="mb-5 text-center text-2xl">Vai querer esse produto?</h1>
+        <div class="flex justify-center mt-14">
+          <button class="mx-5 btn" id="btnSim1">Sim</button>
+          <button class="mx-5 btn" id="btnNao1">Não</button>
+        </div>
+      </div>
+      <div id="page2" class="page" style="display: none;">
+        <h1 class="mb-5 text-center text-2xl">Será?</h1>
+        <div class="flex justify-center mt-14">
+          <button class="mx-5 btn" id="btnSim2">Sim</button>
+          <button class="mx-5 btn" id="btnNao2">Não</button>
+        </div>
+      </div>
+      <div id="page3" class="page hidden" style="display: none;">
+        <h1 class="mb-5 text-center text-2xl">Aceita se casar comigo?</h1>
+        <div class="flex justify-center mt-14">
+          <button class="mx-5 btn" id="btnSim3">
+            <svg class="empty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
+              <path fill="none" d="M0 0H24V24H0z"></path>
+              <path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"></path>
+            </svg>
+            <svg class="filled" height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0H24V24H0z" fill="none"></path>
+              <path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"></path>
+            </svg>
+            Sim
+          </button>
+          <button class="mx-5" id="btnNao3">Não</button>
+        </div>
+      </div>
+      <div id="page4" class="page mx-5 px-5" style="display: none;">
+        <h1>
+          Parabéns você acabou de assinar o contrato com o vendedor, esse
+          produto é seu ooo!!!
+        </h1>
+      </div>
+
+      <!-- CONTEÚDO COM SCROLL E MENSAGENS -->
+      <div id="page5" class="page w-full h-full relative h-screen" style="display: none;">
+        <!-- Container que envolve as imagens e faz scroll -->
+        <div id="scrollArea" class="p-5 md:p-10 overflow-y-scroll h-full w-full">
+          <div class="masonry">
+            <!-- 1 -->
+            <img src="https://i.ibb.co/ks3CqhLs/Imagem-do-Whats-App-de-2024-06-01-s-19-30-39-da49c860.jpg" alt="47" />
+            <!-- 3 -->
+            <img src="https://i.ibb.co/MySW20HY/1710640756635.jpg" alt="12" />
+            <!-- 4 -->
+            <img src="https://i.ibb.co/XrPF1DBd/1717282589787.jpg" alt="63" />
+            <!-- 6 -->
+            <img src="https://i.ibb.co/nq1F4jXx/1710637512927.jpg" alt="5" />
+            <!-- 7 -->
+            <img src="https://i.ibb.co/V0SLBQWx/1717290462142.jpg" alt="29" />
+            <!-- 9 -->
+            <img src="https://i.ibb.co/k2TbF1fH/1719968047504.jpg" alt="34" />
+            <!-- 10 -->
+            <img src="https://i.ibb.co/9HwLk3JP/1717285963932.jpg" alt="19" />
+            <!-- 11 -->
+            <img src="https://i.ibb.co/0VQ15mGc/1710637513018.jpg" alt="8" />
+            <!-- 12 -->
+            <img src="https://i.ibb.co/FLddSLFn/not2.png" alt="56" />
+            <!-- 13 – Vídeo 7 -->
+            <video class="w-full h-auto mb-4" playsinline loop muted autoplay preload="metadata">
+                <source src="./media/medalha.mp4" type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <!-- 14 -->
+            <img src="https://i.ibb.co/VpJWNV7T/1739127051902.jpg" alt="60" />
+            <!-- 15 -->
+            <img src="https://i.ibb.co/CKCp09nR/7e3f6a14-e69b-4090-aa2e-1f33df65caf7.jpg" alt="3" />
+            <!-- 17 -->
+            <img src="https://i.ibb.co/bj5VGLDb/1717289363745.jpg" alt="22" />
+            <!-- 18 -->
+            <img src="https://i.ibb.co/bjFXxcMS/1729871641444.jpg" alt="41" />
+            <!-- 19 – Vídeo 5 -->
+            <video class="w-full h-auto mb-4" playsinline loop muted autoplay preload="metadata">
+                <source src="./media/if_biblioteca.mp4" type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <!-- 20 -->
+            <img src="https://i.ibb.co/Pv6MJg5L/IMG-20240828-073318.jpg" alt="50" />
+            <!-- 21 -->
+            <img src="https://i.ibb.co/hFVWVZms/1717282589780.jpg" alt="15" />
+            <!-- 23 -->
+            <img src="https://i.ibb.co/XZRytsJv/7a587a9a-ed5b-45e3-81b3-1083fd0f33f9.jpg" alt="2" />
+            <!-- 24 -->
+            <img src="https://i.ibb.co/j9gvt19H/1719968047663.jpg" alt="62" />
+            <!-- 26 -->
+            <img src="https://i.ibb.co/mVXLWkMY/1717290166389.jpg" alt="26" />
+            <!-- 27 -->
+            <img src="https://i.ibb.co/5PhZnM6/19aa9028-90d9-4565-9bb9-f5ced86cb1a3.jpg" alt="59" />
+            <!-- 28 -->
+            <img src="https://i.ibb.co/bRsg7VYZ/1729871641436.jpg" alt="40" />
+            <!-- 29 – Vídeo 8 -->
+            <video class="w-full h-auto mb-4" playsinline loop muted autoplay preload="metadata">
+                <source src="./media/pedido-de-namoro-minha-digníssima.mp4" type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <!-- 30 -->
+            <img src="https://i.ibb.co/s9qJQQQB/1710644494058.jpg" alt="13" />
+            
+            <!-- 31 -->
+            <img src="https://i.ibb.co/1Jrj3HF4/1710637512968.jpg" alt="7" />
+            <!-- 32 -->
+            <img src="https://i.ibb.co/kstfqX3S/1723046483995.webp" alt="38" />
+            <!-- 33 -->
+            <img src="https://i.ibb.co/zV9rjtHZ/1717285964004.jpg" alt="64" />
+            <!-- 34 – Vídeo 6 -->
+            <video class="w-full h-auto mb-4" playsinline loop muted autoplay preload="metadata">
+                <source src="./media/lavanderia-peraça.mp4" type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <!-- 35 -->
+            <img src="https://i.ibb.co/ycd47Yn8/1717290462153.jpg" alt="30" />
+            <!-- 36 -->
+            <img src="https://i.ibb.co/dwB6c87T/not1.jpg" alt="55" />
+            <!-- 37 -->
+            <img src="https://i.ibb.co/3YdVZtQs/1710637513102.jpg" alt="9" />
+            <!-- 38 -->
+            <img src="https://i.ibb.co/pv6dkhcB/1719968047522.jpg" alt="35" />
+            <!-- 39 -->
+            <img src="https://i.ibb.co/Y7S53CmS/1717290065345.jpg" alt="25" />
+            <!-- 40 -->
+            <img src="https://i.ibb.co/4R6bpqkk/9714c72e-1ab8-4558-a591-ceceb202de79.jpg" alt="4" />
+            <!-- 25 – Vídeo 2 -->
+            <video class="w-full h-auto mb-4" playsinline loop muted autoplay preload="metadata">
+                <source src="./media/festa-são-joão.mp4" type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <!-- 41 -->
+            <img src="https://i.ibb.co/RGtkZ6Kc/1710637513050.jpg" alt="57" />
+            <!-- 42 -->
+            <img src="https://i.ibb.co/HfzYB8yS/1717282589852.jpg" alt="16" />
+            <!-- 43 -->
+            <img src="https://i.ibb.co/GvvCn94g/1717289926389.jpg" alt="23" />
+            <!-- 44 -->
+            <img src="https://i.ibb.co/BMNTfYG/1710637512942.jpg" alt="6" />
+            <!-- 45 -->
+            <img src="https://i.ibb.co/TyRTMk2/1717290166408.jpg" alt="27" />
+            <!-- 46 -->
+            <img src="https://i.ibb.co/JPvyBtX/1710637513117.jpg" alt="10" />
+            <!-- 22 – Vídeo 9 -->
+            <video class="w-full h-auto mb-4" playsinline loop muted autoplay preload="metadata">
+                <source src="./media/pintura-quadro-maria.mp4" type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <!-- 47 -->
+            <img src="https://i.ibb.co/jkF2Bbsd/1727718199583.jpg" alt="39" />
+            <!-- 48 -->
+            <img src="https://i.ibb.co/DgkP8Vsv/image.jpg" alt="54" />
+            <!-- 50 -->
+            <img src="https://i.ibb.co/7dt0qNjN/1717290610042.jpg" alt="31" />
+            <!-- 51 -->
+            <img src="https://i.ibb.co/JFr7ndBc/1718645168202.jpg" alt="33" />
+            <!-- 52 -->
+            <img src="https://i.ibb.co/Zpf41w9f/Imagem-do-Whats-App-de-2024-09-29-s-12-34-39-2d14a9d4.jpg" alt="48" />
+            <!-- 53 -->
+            <img src="https://i.ibb.co/NdnMqYtN/1723046483987.webp" alt="37" />
+            <!-- 16 – Vídeo 3 -->
+            <video class="w-full h-auto mb-4" playsinline loop muted autoplay preload="metadata">
+                <source src="./media/if-cafe.mp4" type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <!-- 54 -->
+            <img src="https://i.ibb.co/8np4KGhb/IMG-20240927-151918.jpg" alt="52" />
+            <!-- 55 -->
+            <img src="https://i.ibb.co/35T5XQqf/1710644494090.webp" alt="14" />
+            <!-- 56 -->
+            <img src="https://i.ibb.co/ksHhCJ0v/1736639492259.jpg" alt="42" />
+            <!-- 57 -->
+            <img src="https://i.ibb.co/TBQMmXDV/6fafe2e3-95c9-4155-8bf5-908cad77e8b2.jpg" alt="1" />
+            <!-- 58 -->
+            <img src="https://i.ibb.co/YFNV1Lpq/1717289032715.jpg" alt="21" />
+            <!-- 59 -->
+            <img src="https://i.ibb.co/3ypTsMCC/1717282589859.jpg" alt="17" />
+            <!-- 60 -->
+            <img src="https://i.ibb.co/20XBMhnn/1710637513130.webp" alt="11" />
+            <!-- 8 – Vídeo 1 -->
+            <video class="w-full h-auto mb-4" playsinline loop muted autoplay preload="metadata">
+                <source src="./media/boliche.mp4" type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <!-- 61 -->
+            <img src="https://i.ibb.co/nMVjL2qV/1717290441124.webp" alt="28" />
+            <!-- 62 -->
+            <img src="https://i.ibb.co/HLffL8t0/1719968047461.jpg" alt="53" />
+            <!-- 63 -->
+            <img src="https://i.ibb.co/8n1mjrPG/1717285964029.jpg" alt="20" />
+            <!-- 64 -->
+            <img src="https://i.ibb.co/zhKz5vsv/1736639492389.jpg" alt="44" />
+            <!-- 65 -->
+            <img src="https://i.ibb.co/1fXWStBs/IMG-20240828-073427.jpg" alt="51" />
+            <!-- 66 -->
+            <img src="https://i.ibb.co/YxPdVtf/1736639492365.jpg" alt="43" />
+            <!-- 67 -->
+            <img src="https://i.ibb.co/60x0z3J1/1719968047621.jpg" alt="36" />
+            <!-- 5 – Vídeo 10 -->
+            <video class="w-full h-auto mb-4" playsinline loop muted autoplay preload="metadata">
+                <source src="./media/pintura-quadro-savio.mp4" type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <!-- 68 -->
+            <img src="https://i.ibb.co/6R4v1fYv/1717285963922.jpg" alt="18" />
+            <!-- 69 -->
+            <img src="https://i.ibb.co/ZR0DpM8T/1718645168196.jpg" alt="32" />
+            <!-- 70 -->
+            <img src="https://i.ibb.co/0yhvDztb/Captura-de-tela-2024-03-25-124011.png" alt="45" />
+            <!-- 71 -->
+            <img src="https://i.ibb.co/WWnyjkkP/f8afed35-f648-473b-9063-3d988dbf2831.jpg" alt="46" />
+            <!-- 72 -->
+            <img src="https://i.ibb.co/Q72vcZ03/1717289926441.jpg" alt="24" />
+            <!-- 73 -->
+            <img src="https://i.ibb.co/RpXRp4yP/1718645771043.jpg" alt="61" />
+            <!-- 74 -->
+            <img src="https://i.ibb.co/YVfskLP/IMG-20240828-073049.jpg" alt="49" />
+            <!-- 75 -->
+            <img src="https://i.ibb.co/yB68qy2P/1710644494036.jpg" alt="58" />
+            <!-- 2 – Vídeo 4 -->
+            <video class="w-full h-auto mb-4" playsinline loop muted autoplay preload="metadata">
+                <source src="./media/if-piraça.mp4" type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+          </div>
+        </div>
+
+        <!-- Bloco de mensagens + botões em overlay central -->
+        <div id="scrollMessages" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center pointer-events-none rounded-2xl p-3" style="background-color:rgba(255, 255, 255, 0.8); backdrop-filter: blur(3px);">
+          <p id="textMessage" class="text-3xl text-center text-black py-3 px-6 rounded transition-opacity duration-500">
+          </p>
+          <div class="mt-4 pointer-events-auto flex space-x-4">
+            <button id="btnSimMessage" class="btn text-lg px-4 py-2">Sim</button>
+            <button id="btnNaoMessage" class="btn text-lg px-4 py-2">Não</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="page6" class="hidden bg-black w-full h-screen relative overflow-hidden">
+        <!-- Container da imagem final -->
+        <div
+          id="finalImageContainer"
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full animate-image-fade-out z-20"
+        >
+          <img
+            id="finalImage"
+            class="h-full py-24"
+            src="https://i.ibb.co/kgxnYJLy/fotos-nossas-0.png"
+            alt="Imagem Final"
+            style="transform: rotate(3deg);"
+          />
+        </div>
+        <!-- Mensagem final -->
+        <p
+          id="finalMessage"
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-[2.5em] opacity-0 animate-message-fade-in-out text-center z-20"
+        >
+          Parabéns contrato renovado até <br />
+          o 28 de Fevereiro de 2026 o
+        </p>
+        <div class="wrapper opacity-0 animate-card-fade-in-out" id="planoFundo">
+            <div class="inner" style="--quantity: 10;">
+            <div class="card" style="--index: 0;--color-card: 142, 249, 252;">
+                <img class="img" src="https://i.ibb.co/5WyM9zF8/fotos-nossas-24.png" alt="fotos-nossas-24"/>
             </div>
-        </div>
-        <div id="page2" class="page" style="display: none;">
-            <h1 class="mb-5">Será?</h1>
-            <div class="d-flex justify-content-center mt-5">
-                <button class="mx-5" id="btnSim2">Sim</button>
-                <button class="mx-5" id="btnNao2">Não</button>
+            <div class="card" style="--index: 1;--color-card: 142, 252, 204;">
+                <img class="img" src="https://i.ibb.co/R4JTZPDZ/fotos-nossas-25.png" alt="fotos-nossas-25"/>
             </div>
-        </div>
-        <div id="page3" class="page" style="display: none;">
-            <h1 class="mb-5">Aceita se casar comigo?</h1>
-            <div class="d-flex justify-content-center mt-5">
-                <button class="mx-5" id="btnSim3">
-                    <svg class="empty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
-                        <path fill="none" d="M0 0H24V24H0z"></path>
-                        <path
-                            d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2zm-3.566 15.604c.881-.556 1.676-1.109 2.42-1.701C18.335 14.533 20 11.943 20 9c0-2.36-1.537-4-3.5-4-1.076 0-2.24.57-3.086 1.414L12 7.828l-1.414-1.414C9.74 5.57 8.576 5 7.5 5 5.56 5 4 6.656 4 9c0 2.944 1.666 5.533 4.645 7.903.745.592 1.54 1.145 2.421 1.7.299.189.595.37.934.572.339-.202.635-.383.934-.571z">
-                        </path>
-                    </svg>
-                    <svg class="filled" height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 0H24V24H0z" fill="none"></path>
-                        <path
-                            d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z">
-                        </path>
-                    </svg>
-                    Sim
-                </button>
-                <button class="mx-5" id="btnNao3">Não</button>
+            <div class="card" style="--index: 2;--color-card: 142, 252, 157;">
+                <img class="img" src="https://i.ibb.co/M5NYvwyz/fotos-nossas-26.png" alt="fotos-nossas-26"/>
             </div>
-        </div>
-        <div id="page4" class="page mx-5 px-5" style="display: none;">
-            <h1>Parabéns você acabou de assinar o contrato com o vendedor, esse produto é seu ooo!!!</h1>
-        </div>
+            <div class="card" style="--index: 3;--color-card: 215, 252, 142;">
+                <img class="img" src="https://i.ibb.co/kjyPxx5/fotos-nossas-0.png" alt="fotos-nossas-0"/>
+            </div>
+            <div class="card" style="--index: 4;--color-card: 252, 252, 142;">
+                <img class="img" src="https://i.ibb.co/5gMLRGj5/fotos-nossas-7.png" alt="fotos-nossas-7"/>
+            </div>
+            <div class="card" style="--index: 5;--color-card: 252, 208, 142;">
+                <img class="img" src="https://i.ibb.co/67qq7WK1/fotos-nossas-9.png" alt="fotos-nossas-9"/>
+            </div>
+            <div class="card" style="--index: 6;--color-card: 252, 142, 142;">
+                <img class="img" src="https://i.ibb.co/tMf2Qvrx/fotos-nossas-11.png" alt="fotos-nossas-11"/>
+            </div>
+            <div class="card" style="--index: 7;--color-card: 252, 142, 239;">
+                <img class="img" src="https://i.ibb.co/KzNhNpqQ/fotos-nossas-12.png" alt="fotos-nossas-12"/>
+            </div>
+            <div class="card" style="--index: 8;--color-card: 204, 142, 252;">
+                <img class="img" src="https://i.ibb.co/hxCz0d7V/fotos-nossas-17.png" alt="fotos-nossas-17"/>
+            </div>
+            <div class="card" style="--index: 9;--color-card: 142, 202, 252;">
+                <img class="img" src="https://i.ibb.co/QvxjtWZR/fotos-nossas-22.png" alt="fotos-nossas-22"/>
+            </div>
+            </div>
+        </div>  
+      </div>
     </div>
-
-</body>
-
+    <script src="./script.js"></script>
+  </body>
 </html>
-<style>
-    h1{
-        text-align: center;
-        font-size: 2em !important;
-        color: #da0000 !important;
-        text-shadow: 5px 5px 5px  rgb(45, 0, 0);
-    }
-    #btnSim3,
-    #btnSim2,
-    #btnSim1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 35px;
-        box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-        background-color: #e8e8e8;
-        border-color: #ffe2e2;
-        border-style: solid;
-        border-width: 9px;
-        border-radius: 35px;
-        font-size: 25px;
-        font-weight: 900;
-        color: rgb(45, 0, 0);
-        font-family: Loves;
-        transition: transform 400ms cubic-bezier(.68, -0.55, .27, 2.5);
-        border-color: 400ms ease-in-out;
-        background-color: 400ms ease-in-out;
-        word-spacing: -2px;
-    }
-
-
-    #btnNao3,
-    #btnNao2,
-    #btnNao1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 35px;
-        box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-        background-color: #e8e8e8;
-        border-color: #ffe2e2;
-        border-style: solid;
-        border-width: 9px;
-        border-radius: 35px;
-        font-size: 25px;
-        font-weight: 900;
-        color: rgb(45, 0, 0);
-        font-family: Loves;
-        transition: transform 400ms cubic-bezier(.68, -0.55, .27, 2.5);
-        border-color: 400ms ease-in-out;
-        background-color: 400ms ease-in-out;
-        word-spacing: -2px;
-    }
-
-    @keyframes movingBorders {
-        0% {
-            border-color: #fce4e4;
-        }
-
-        50% {
-            border-color: #ffd8d8;
-        }
-
-        90% {
-            border-color: #fce4e4;
-        }
-    }
-
-    #btnSim3:hover,
-    #btnSim2:hover,
-    #btnSim1:hover {
-        transform: scale(105%);
-        animation: movingBorders 3s infinite;
-        background-color: #970000;
-        color: #ffb6b6;
-    }
-
-    #btnNao3:hover,
-    #btnNao2:hover,
-    #btnNao1:hover {
-        transform: scale(105%);
-        animation: movingBorders 3s infinite;
-        background-color: #380000;
-        color: #ffb6b6;
-    }
-
-    #btnSim3 svg {
-        margin-right: 11px;
-        fill: rgb(255, 110, 110);
-        transition: opacity 100ms ease-in-out;      
-    }
-
-    .filled {
-        position: absolute;
-        opacity: 0;
-        top: 20px;
-        left: 22px;
-    }
-
-    @keyframes beatingHeart {
-        0% {
-            transform: scale(1);
-        }
-
-        15% {
-            transform: scale(1.15);
-        }
-
-        30% {
-            transform: scale(1);
-        }
-
-        45% {
-            transform: scale(1.15);
-        }
-
-        60% {
-            transform: scale(1);
-        }
-    }
-
-    #btnSim3:hover .empty {
-        opacity: 0;
-    }
-
-    #btnSim3:hover .filled {
-        opacity: 1;
-        animation: beatingHeart 1.2s infinite;
-    }
-
-    @font-face {
-        font-family: Loves;
-        src: url(Lover\ Loves.ttf);
-    }
-
-    body {
-        background-color: #ffb6b6;
-        color: #520000;
-        font-size: 2.5em;
-        font-family: Loves;
-        overflow: hidden;
-        margin: 0;
-        width: 100%;
-        height: 100vh;
-    }
-
-    .caixa_botoes {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-
-    }
-
-    .page {
-        background-color: transparent;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    .bubble {
-        position: absolute;
-        width: 10vw;
-        height: 10vw;
-        min-width: 70px;
-        min-height: 70px;
-        max-width: 150px;
-        max-height: 150px;
-        color: #e03a3a;
-        border-radius: 50%;
-    }
-
-
-    .bubble-dummy {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        border-radius: inherit;
-        border: .2em solid currentColor;
-        animation: bubbleUp 1200ms ease-out forwards;
-    }
-
-    @keyframes bubbleUp {
-        from {
-            opacity: 0;
-            transform: scale(0);
-        }
-
-        50% {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        100% {
-            opacity: 0;
-            transform: scale(1.1);
-        }
-    }
-
-
-    .heart {
-        width: 100%;
-        height: 100%;
-        background: transparent;
-    }
-
-    .heart path {
-        fill: #e27373;
-        stroke: none;
-    }
-
-    @media only screen and (max-width: 768px) {
-
-        /* Ajusta o tamanho da fonte dos botões */
-        #btnSim3,
-        #btnSim2,
-        #btnSim1 {
-            font-size: 1.25rem;
-            /* 20px / 16px = 1.25rem */
-        }
-
-        /* Ajusta a largura dos botões */
-        #btnSim3,
-        #btnSim2,
-        #btnSim1,
-        #btnNao3,
-        #btnNao2,
-        #btnNao1 {
-            width: 100%;
-            max-width: none;
-        }
-
-        /* Centraliza o texto dos botões */
-        #btnSim3 span,
-        #btnSim2 span,
-        #btnSim1 span,
-        #btnNao3 span,
-        #btnNao2 span,
-        #btnNao1 span {
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* Ajusta o espaçamento entre os botões */
-        .caixa_botoes {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            /* 10px / 16px = 0.625rem */
-        }
-
-    }
-</style>
-
-<script>
-    document.getElementById("btnSim1").addEventListener("click", function () {
-        document.getElementById("page1").style.display = "none";
-        document.getElementById("page2").style.display = "block";
-    });
-
-    document.getElementById("btnNao1").addEventListener("click", function () {
-        location.reload();
-    });
-
-    document.getElementById("btnSim2").addEventListener("click", function () {
-        document.getElementById("page2").style.display = "none";
-        document.getElementById("page3").style.display = "block";
-    });
-
-    document.getElementById("btnNao2").addEventListener("click", function () {
-        document.getElementById("page2").style.display = "none";
-        document.getElementById("page1").style.display = "block";
-    });
-
-    document.getElementById("btnSim3").addEventListener("click", function () {
-        document.getElementById("page3").style.display = "none";
-        document.getElementById("page4").style.display = "block";
-        const audio = new Audio("love_leve.mp3")
-        audio.play()
-    });
-
-    // Obtém uma referência para o elemento de botão com o ID "btnNao3"
-    const button = document.getElementById("btnNao3");
-    // Adiciona um evento de passagem do mouse ao botão
-    button.addEventListener("mouseover", function () {
-        // Gera uma posição aleatória para o botão dentro da janela do navegador
-        const posY = Math.random() * (window.innerHeight - button.offsetHeight);
-        const posX = Math.random() * (window.innerWidth - button.offsetWidth);
-
-        // Define a posição do botão como "absoluta", movendo assim o botão para essa nova posição
-        button.style.position = "absolute";
-        button.style.top = `${posY}px`;
-        button.style.left = `${posX}px`;
-    });
-
-
-    function getRandomColor() {
-        var colors = ["#e03a3a", "#e03a3a", "#e03a3a", "#e03a3a", "#e03a3a", "#e03a3a"],
-            idx = Math.floor(colors.length * Math.random());
-        return (colors[idx]);
-    }
-
-    function animateIt(el, dur, delay) {
-        var animateEl = el.animate([
-            {
-                opacity: 0,
-                transform: "translate(-50%, -50%) scale(0)"
-            },
-
-            {
-                opacity: 1,
-                transform: "translate(-50%, -50%) scale(1)"
-            },
-            {
-                opacity: 0,
-                transform: "translate(-50%, -50%) scale(1.1)"
-            }
-
-        ],
-            {
-                duration: dur,
-                easing: "ease-out",
-                fill: "forwards",
-                delay: delay || 0
-            });
-
-        return animateEl;
-    }
-
-
-
-    function createBubble() {
-        var ns = "http://www.w3.org/2000/svg",
-            bubble = document.createElement("div"),
-            bubbleDummy = document.createElement("div"),
-            heart = document.createElementNS(ns, "svg"),
-            heartPath = document.createElementNS(ns, "path");
-
-        heart.setAttribute("viewBox", "0 0 600 500")
-        heartPath.setAttribute("d", "M300,150 C500,10 600,300 300,400 C0,300 100,10 300,150");
-        bubble.classList.add("bubble");
-        bubble.style.color = getRandomColor();
-        bubbleDummy.classList.add("bubble-dummy");
-        heart.classList.add("heart");
-
-        heart.appendChild(heartPath);
-        bubble.appendChild(bubbleDummy);
-        bubble.appendChild(heart);
-
-        document.body.appendChild(bubble);
-        return {
-            setPosition: function (x, y) {
-                bubble.style.left = x + "px";
-
-                bubble.style.top = y + "px";
-            },
-            _animate: function () {
-                var animateBubble = animateIt(bubbleDummy, 1200),
-                    animateHeart = animateIt(heart, 2000);
-
-                console.log(animateBubble)
-
-                return {
-                    bubbleDur: 1200,
-                    heartDur: 2000
-                }
-            },
-            remove: function (el) {
-                bubble.remove();
-            }
-        }
-    }
-
-
-    document.body.addEventListener("touchstart", handleDown, false);
-
-    function handleDown(e) {
-        var _x = e.pageX,
-            _y = e.pageY;
-
-        var bubble = createBubble();
-
-        bubble.setPosition(_x, _y);
-        var animation = bubble._animate(),
-            totalDelay = animation.bubbleDur + animation.heartDur;
-        if (e.type) {
-            createSound(20, 5000, 1, "sawtooth", 1);
-        }
-        setTimeout(() => {
-            bubble.remove();
-            console.log("removed");
-        }, totalDelay);
-
-        console.log(animation);
-    }
-
-    var w = document.body.clientWidth,
-        h = document.body.clientHeight;
-
-    function bubbleUp() {
-        var de = {
-            pageX: Math.random() * w,
-            pageY: Math.random() * h
-        }
-
-        handleDown(de);
-
-        bblUp = setTimeout(bubbleUp, 200);
-
-    }
-    bubbleUp();
-
-    window.addEventListener("resize", function () {
-        w = document.body.clientWidth,
-            h = document.body.clientHeight;
-    }, false);
-
-</script>
